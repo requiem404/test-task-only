@@ -1,0 +1,28 @@
+// PTSans
+@font-face {
+  font-display: swap;
+  font-family: 'PTSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/pt-sans/PTSans-Regular.woff2'),
+       url('../../fonts/pt-sans/PTSans-Regular.woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'PTSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../fonts/pt-sans/PTSans-Bold.woff2'),
+       url('../../fonts/pt-sans/PTSans-Bold.woff');
+}
+
+// BebasNeue
+@font-face {
+  font-display: swap;
+  font-family: 'BebasNeue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/bebas-neue/BebasNeue-Regular.woff2'),
+       url('../../fonts/bebas-neue/BebasNeue-Regular.woff');
+}

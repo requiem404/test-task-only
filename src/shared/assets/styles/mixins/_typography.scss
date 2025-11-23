@@ -1,0 +1,27 @@
+$pt-sans: var(--pt-sans);
+$bebas-neue: var(--bebas-neue);
+
+@mixin h1-pt-bold-200 {
+  @include font($size: 200px, $weight: 700, $lineHeight: 160%);
+}
+
+@mixin h2-pt-bold-56 {
+  @include font($size: 56px, $weight: 700, $lineHeight: 120%);
+}
+
+@mixin p1-pt-regular-20 {
+  @include font($size: 20px, $weight: 400, $lineHeight: 30px);
+}
+
+@mixin p2-pt-bold-20 {
+  @include font($size: 20px, $weight: 700, $lineHeight: 120%);
+}
+
+@mixin c1-bebas-regular-25 {
+  @include font($size: 25px, $weight: 400, $lineHeight: 120%);
+  font-family: $bebas-neue;
+}
+
+@mixin c2-pt-regular-14 {
+  @include font($size: 14px, $weight: 400, $lineHeight: 120%);
+}

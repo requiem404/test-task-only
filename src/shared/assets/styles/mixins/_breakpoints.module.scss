@@ -1,0 +1,73 @@
+$breakpoints: (
+  mobile-s: 320px,
+  mobile-m: 375px,
+  mobile-l: 424px,
+  mobile-xl: 475px,
+  mobile-xxl: 767px,
+  tablet: 768px,
+  laptop-s: 1024px,
+  laptop-sm: 1112px,
+  laptop-m: 1200px,
+  laptop-l: 1440px,
+  desktop: 1920px,
+  desktop-m: 2560px
+);
+
+:export {
+  @each $key, $value in $breakpoints {
+    min-#{$key}: $value;
+    max-#{$key}: $value - 0.02px;
+  }
+}
+
+@function bp($key) {
+  @return map-get($breakpoints, $key);
+}
+
+@function bp-max($key) {
+  @return bp($key) - 0.02px;
+}
+
+@mixin min($key) {
+  @media (min-width: bp($key)) {
+    @content;
+  }
+}
+
+@mixin max($key) {
+  @media (max-width: bp-max($key)) {
+    @content;
+  }
+}
+
+@mixin between($min, $max) {
+  @media (min-width: bp($min)) and (max-width: bp-max($max)) {
+    @content;
+  }
+}
+
+// Named Mixins
+
+@mixin mobile {
+  @include max(mobile-xxl) { @content; }
+}
+
+@mixin tablet {
+  @include max(tablet) { @content; }
+}
+
+@mixin desktop {
+  @include min(laptop-s) { @content; }
+}
+
+@mixin desktop-sm {
+  @include min(laptop-sm) { @content; }
+}
+
+@mixin desktop-large {
+  @include min(desktop) { @content; }
+}
+
+@mixin desktop-2k {
+  @include min(desktop-m) { @content; }
+}
