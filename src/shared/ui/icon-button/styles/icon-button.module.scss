@@ -1,0 +1,66 @@
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  &--small {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &--medium {
+    width: 50px;
+    height: 50px;
+
+    svg {
+      width: 12.5px;
+      height: 12.5px;
+    }
+
+    @include mobile {
+      width: 25px;
+      height: 25px;  
+
+      svg {
+        width: 6.25px;
+        height: 6.25px;
+      }
+    }
+  }
+
+  &--primary{
+    color: var(--black-blue);
+    border: 1px solid var(--border-default); 
+  }
+
+  &--secondary {
+    color: var(--blue);
+    background-color: var(--white);
+    box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.10);
+  }
+  
+
+  &:not(:disabled):hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  &:not(:disabled):active {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    color: var(--black-blue);
+    border: 1px solid var(--black-blue); 
+    opacity: .5;
+  }
+}
